@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141720"/>
+      <stop offset="50%" stop-color="#0a0c10"/>
+      <stop offset="100%" stop-color="#181b24"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d78a"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#9a7722"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(212,175,55,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bgGrad)"/>
+  <rect width="600" height="600" fill="url(#grid)"/>
+  <circle cx="300.0" cy="260.0" r="220" fill="url(#goldGlow)"/>
+
+  <!-- Ornate Corner Borders -->
+  <g stroke="url(#goldGrad)" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M 30 50 L 30 30 L 50 30 M 35 35 L 45 35"/>
+    <path d="M 570 50 L 570 30 L 550 30 M 565 35 L 555 35"/>
+    <path d="M 30 550 L 30 570 L 50 570 M 35 565 L 45 565"/>
+    <path d="M 570 550 L 570 570 L 550 570 M 565 565 L 555 565"/>
+  </g>
+
+  <!-- Center Circle Frame -->
+  <circle cx="300.0" cy="260.0" r="110" stroke="url(#goldGrad)" stroke-width="2" fill="rgba(18,21,28,0.7)" stroke-dasharray="6,4"/>
+  <circle cx="300.0" cy="260.0" r="96" stroke="rgba(212,175,55,0.3)" stroke-width="1" fill="none"/>
+
+  <!-- Icon inside circle -->
+  <g transform="translate(264.0, 224.0) scale(3)">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#goldGrad)" opacity="0.8"/>
+  </g>
+
+  <!-- Text elements -->
+  <text x="300.0" y="410.0" text-anchor="middle" fill="#d4af37" font-family="'Cinzel', serif" font-size="22" font-weight="600" letter-spacing="3">SWEET MOMENTS</text>
+  <text x="300.0" y="440.0" text-anchor="middle" fill="#cbd5e1" font-family="'Cormorant Garamond', Georgia, serif" font-size="16" font-style="italic" letter-spacing="1">Bahagia Bersama</text>
+  <text x="300.0" y="465.0" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="11" letter-spacing="2">GANTI DENGAN FOTO ANDA</text>
+</svg>

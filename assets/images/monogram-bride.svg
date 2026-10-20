@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="goldBride" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2cc"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6714"/>
+    </linearGradient>
+    <radialGradient id="glowBride" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="#0d0f14"/>
+  <circle cx="200" cy="200" r="180" fill="url(#glowBride)"/>
+
+  <!-- Ornate Floral Circular Shield -->
+  <circle cx="200" cy="200" r="155" stroke="url(#goldBride)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <circle cx="200" cy="200" r="145" stroke="url(#goldBride)" stroke-width="2" fill="rgba(18,21,28,0.7)"/>
+  <circle cx="200" cy="200" r="132" stroke="url(#goldBride)" stroke-width="1" stroke-dasharray="3,5" fill="none"/>
+
+  <!-- Tiara / Floral Crown -->
+  <path d="M 175 118 Q 190 98 200 112 Q 210 98 225 118 Q 200 110 175 118 Z" fill="url(#goldBride)"/>
+  <circle cx="200" cy="98" r="3.5" fill="url(#goldBride)"/>
+  <circle cx="188" cy="103" r="2.5" fill="url(#goldBride)"/>
+  <circle cx="212" cy="103" r="2.5" fill="url(#goldBride)"/>
+
+  <!-- Center Letter F -->
+  <text x="202" y="240" font-family="'Cinzel', Georgia, serif" font-size="115" font-weight="700" fill="url(#goldBride)" text-anchor="middle">F</text>
+  
+  <text x="200" y="280" font-family="'Cinzel', sans-serif" font-size="12" font-weight="600" fill="#cbd5e1" text-anchor="middle" letter-spacing="5">THE BRIDE</text>
+  <text x="200" y="302" font-family="'Cormorant Garamond', Georgia, serif" font-size="14" font-style="italic" fill="#d4af37" text-anchor="middle">Elfitra Sitanggang</text>
+</svg>

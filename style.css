@@ -1,0 +1,742 @@
+/* ========================================================
+   WEDDING INVITATION: SANRO & FITRA
+   Ultra-Luxury Royal Burgundy & Champagne Gold Edition
+   Warm, Friendly, and Regal Red Aesthetic
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Royal Luxury Red / Burgundy Palette */
+  --bg-primary: #140306;
+  --bg-secondary: #22050a;
+  --bg-wine-deep: #1b0407;
+  --bg-wine-surface: rgba(55, 10, 17, 0.76);
+  --bg-wine-elevated: rgba(72, 14, 23, 0.86);
+  --wine-accent: #871628;
+  --wine-light: #ab233a;
+
+  /* Champagne & Warm Gold */
+  --gold-100: #fff6e0;
+  --gold-200: #f8e5b4;
+  --gold-300: #f0d487;
+  --gold-400: #d4af37;
+  --gold-500: #b58d24;
+  --gold-600: #856414;
+  
+  --gold-gradient: linear-gradient(135deg, #fff3cf 0%, #f0d487 35%, #d4af37 70%, #9e7a23 100%);
+  --gold-border: rgba(212, 175, 55, 0.38);
+  --gold-border-light: rgba(212, 175, 55, 0.2);
+  --gold-glow: 0 0 25px rgba(212, 175, 55, 0.22);
+  --red-glow: 0 0 35px rgba(160, 22, 40, 0.3);
+  
+  /* Text */
+  --text-primary: #fff8f8;
+  --text-secondary: #fbe6e8;
+  --text-muted: #d5adb3;
+  --text-gold: #f3d489;
+
+  --font-serif-title: 'Cinzel', Georgia, serif;
+  --font-serif-body: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-script: 'Alex Brush', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #0d0103;
+  color: var(--text-primary);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 50% 8%, rgba(180, 24, 45, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 10% 45%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 75%, rgba(180, 24, 45, 0.2) 0%, transparent 45%),
+    linear-gradient(180deg, #160306 0%, #20050a 50%, #120204 100%);
+  min-height: 100vh;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ========================================================
+   Container & Layout: Mobile-first & Desktop Centered
+   ======================================================== */
+.invitation-wrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.95), 0 0 30px rgba(180, 24, 45, 0.3);
+  border-left: 1px solid rgba(212, 175, 55, 0.16);
+  border-right: 1px solid rgba(212, 175, 55, 0.16);
+  padding-bottom: 95px; /* Space for bottom nav */
+}
+
+/* Desktop Ambient Backdrop */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 0;
+    background: radial-gradient(circle at center, #350810 0%, #1c0307 60%, #0a0102 100%);
+  }
+  
+  .invitation-wrapper {
+    border-radius: 36px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.32);
+    box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(180, 24, 45, 0.35);
+  }
+}
+
+/* ========================================================
+   Typography Utilities
+   ======================================================== */
+.font-cinzel {
+  font-family: var(--font-serif-title);
+  letter-spacing: 0.12em;
+}
+
+.font-cormorant {
+  font-family: var(--font-serif-body);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.text-gold {
+  color: var(--text-gold);
+}
+
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-divider {
+  width: 70px;
+  height: 2px;
+  background: var(--gold-gradient);
+  margin: 16px auto;
+  position: relative;
+  border-radius: 2px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gold-400);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+}
+
+.gold-divider::before { left: -10px; }
+.gold-divider::after { right: -10px; }
+
+/* ========================================================
+   Glassmorphism Cards: Royal Wine Red
+   ======================================================== */
+.glass-card {
+  background: var(--bg-wine-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gold-border-light);
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.glass-card-elevated {
+  background: var(--bg-wine-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--gold-border);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), inset 0 1px 2px rgba(212, 175, 55, 0.2), var(--red-glow);
+  position: relative;
+}
+
+/* Friendly Corner Accents */
+.royal-corner-card {
+  position: relative;
+}
+
+.royal-corner-card::before,
+.royal-corner-card::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--gold-400);
+  opacity: 0.65;
+}
+
+.royal-corner-card::before {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.royal-corner-card::after {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ========================================================
+   Buttons: Luxury Gold & Friendly Wine Accents
+   ======================================================== */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #1e0509;
+  font-weight: 700;
+  border: none;
+  border-radius: 9999px;
+  padding: 13px 30px;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 22px rgba(212, 175, 55, 0.45), 0 0 15px rgba(180, 24, 45, 0.3);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.65);
+  filter: brightness(1.08);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--gold-border);
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-glass:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+/* ========================================================
+   Fullscreen Cover Gate
+   ======================================================== */
+#cover-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #120204;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.7s ease;
+}
+
+#cover-screen.opened {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cover-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/couple-full.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  filter: brightness(0.45) contrast(1.08);
+  transform: scale(1.03);
+  transition: transform 7s ease;
+}
+
+#cover-screen:hover .cover-bg-image {
+  transform: scale(1.07);
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(22, 3, 6, 0.88) 0%, 
+    rgba(34, 5, 10, 0.55) 35%, 
+    rgba(28, 4, 8, 0.82) 70%, 
+    rgba(18, 2, 5, 0.98) 100%
+  );
+  z-index: 1;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 44px 24px 30px;
+  text-align: center;
+}
+
+.guest-card {
+  background: rgba(45, 8, 14, 0.78);
+  border: 1px solid var(--gold-border);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================================
+   Floating Controls (Music & Bottom Navigation)
+   ======================================================== */
+.music-control-btn {
+  position: fixed;
+  bottom: 84px;
+  right: 20px;
+  z-index: 900;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(40, 6, 12, 0.92);
+  border: 1.5px solid var(--gold-400);
+  color: var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 18px rgba(212, 175, 55, 0.35);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .music-control-btn {
+    right: calc(50% - 240px + 18px);
+    bottom: 90px;
+  }
+}
+
+.music-control-btn.rotating {
+  animation: spinSlow 5s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 28px);
+  max-width: 440px;
+  background: rgba(30, 4, 8, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--gold-border-light);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 10px;
+  z-index: 900;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85), 0 0 20px rgba(180, 24, 45, 0.2);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.65rem;
+  font-weight: 500;
+  gap: 3px;
+  padding: 5px 8px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.nav-item i {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: var(--gold-300);
+}
+
+.nav-item.active i {
+  transform: scale(1.15);
+  color: var(--gold-400);
+}
+
+/* ========================================================
+   Hero & Real Couple Portrait Arched Frame
+   ======================================================== */
+.hero-photo-arched {
+  width: 220px;
+  height: 290px;
+  margin: 0 auto 24px;
+  position: relative;
+  border-radius: 110px 110px 24px 24px;
+  overflow: hidden;
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(180, 24, 45, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-photo-arched img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.hero-photo-arched:hover img {
+  transform: scale(1.05);
+}
+
+.countdown-box {
+  background: rgba(50, 8, 14, 0.8);
+  border: 1px solid var(--gold-border-light);
+  border-radius: 14px;
+  padding: 10px 6px;
+  min-width: 68px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.countdown-num {
+  font-family: var(--font-serif-title);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1.1;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* ========================================================
+   Couple Section: Grand Portrait & Friendly Person Cards
+   ======================================================== */
+.couple-portrait-banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid var(--gold-border);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+}
+
+.couple-portrait-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.couple-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(20, 3, 6, 0.85) 100%);
+}
+
+.person-avatar-circle {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.person-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.ampersand-sign {
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  color: var(--gold-400);
+  line-height: 1;
+  margin: 10px 0;
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.5);
+}
+
+/* ========================================================
+   Love Story Timeline
+   ======================================================== */
+.story-timeline {
+  position: relative;
+  padding-left: 28px;
+  margin-top: 20px;
+}
+
+.story-timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 9px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold-400) 0%, rgba(212, 175, 55, 0.2) 100%);
+}
+
+.story-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.story-item:last-child {
+  margin-bottom: 0;
+}
+
+.story-dot {
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.story-dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-400);
+}
+
+/* ========================================================
+   Liturgy & Tata Ibadah Cards
+   ======================================================== */
+.liturgy-step-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.liturgy-step-card:hover {
+  border-color: var(--gold-400);
+  background: rgba(212, 175, 55, 0.08);
+  transform: translateY(-2px);
+}
+
+.liturgy-step-number {
+  font-family: var(--font-serif-title);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-400);
+  background: rgba(212, 175, 55, 0.14);
+  color: var(--gold-300);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ========================================================
+   Batak Wisdom & Ulos Quote Card
+   ======================================================== */
+.batak-wisdom-card {
+  background: linear-gradient(135deg, rgba(65, 12, 20, 0.85) 0%, rgba(35, 6, 10, 0.95) 100%);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================================
+   Digital Gift: VIP Wine-Red ATM Card
+   ======================================================== */
+.bank-card {
+  position: relative;
+  background: linear-gradient(135deg, #3d0810 0%, #200408 55%, #4a0c16 100%);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 22px;
+  padding: 26px 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.14), var(--red-glow);
+  overflow: hidden;
+}
+
+.bank-card::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card-chip {
+  width: 44px;
+  height: 34px;
+  background: linear-gradient(135deg, #f7df99 0%, #b89028 100%);
+  border-radius: 6px;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.card-chip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================================
+   Buku Doa & Ucapan Restu
+   ======================================================== */
+.comment-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.comment-item:hover {
+  border-color: var(--gold-border-light);
+}
+
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #500f18 0%, #29060b 100%);
+  border: 1px solid var(--gold-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-300);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(45, 8, 14, 0.96);
+  border: 1px solid var(--gold-400);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85), 0 0 18px rgba(212, 175, 55, 0.3);
+  z-index: 99999;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

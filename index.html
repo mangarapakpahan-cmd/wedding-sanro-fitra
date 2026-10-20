@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Wedding of Sanro & Fitra | 21 Oktober 2026</title>
+
+  <!-- OpenGraph Metadata for WhatsApp & Social Media Preview -->
+  <meta property="og:title" content="The Wedding of Sanro & Fitra">
+  <meta property="og:description" content="Rabu, 21 Oktober 2026 - Pembekatan di Gereja Katolik St. Yoseph Stasi Pispis">
+  <meta property="og:image" content="assets/images/couple-portrait.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              700: '#871628',
+              800: '#550e1a',
+              900: '#2d060c',
+              950: '#140306'
+            },
+            gold: {
+              200: '#f8e5b4',
+              300: '#f0d487',
+              400: '#d4af37',
+              500: '#b58d24',
+              600: '#856414'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="lock-scroll text-slate-100">
+
+  <!-- ========================================================
+       1. FULLSCREEN COVER SCREEN (LUXURY WINE RED & GOLD)
+       ======================================================== -->
+  <div id="cover-screen">
+    <div class="cover-bg-image"></div>
+    <div class="cover-overlay"></div>
+
+    <div class="cover-content">
+      <!-- Top Subtitle -->
+      <div class="pt-2 animate-fade-in">
+        <p class="font-cinzel text-[11px] text-gold-300 tracking-[0.3em] uppercase">The Holy Matrimony</p>
+      </div>
+
+      <!-- Center Names & Recipient -->
+      <div class="w-full flex flex-col items-center my-auto py-3">
+        <p class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase mb-1">The Wedding Of</p>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold tracking-wider text-white drop-shadow-lg mb-1">
+          SANRO & FITRA
+        </h1>
+        <p class="font-cormorant italic text-lg text-rose-200 tracking-wide mb-4">
+          Rabu, 21 Oktober 2026
+        </p>
+
+        <!-- Dynamic Recipient Card -->
+        <div class="guest-card">
+          <p class="text-[11px] text-slate-300 font-sans tracking-wider mb-1.5 uppercase">
+            Kepada Yth. Bapak/Ibu/Saudara/i:
+          </p>
+          <h2 id="guest-name-cover" class="font-cinzel text-lg sm:text-xl font-semibold text-gold-gradient tracking-wide">
+            Tamu Undangan
+          </h2>
+          <div class="w-12 h-[1px] bg-gold-400/50 mx-auto my-2"></div>
+          <span class="text-[11px] text-rose-200/80 block italic">
+            Tanpa Mengurangi Rasa Hormat
+          </span>
+        </div>
+
+        <!-- Open Invitation Button -->
+        <button id="btn-open-invitation" class="btn-gold mt-2 group">
+          <i class="fa-solid fa-envelope-open-text text-sm transition-transform group-hover:scale-110"></i>
+          <span>Buka Undangan</span>
+        </button>
+      </div>
+
+      <!-- Bottom Courtesy Note -->
+      <div class="pb-2">
+        <p class="text-[10px] text-slate-300 tracking-wide">
+          *Mohon maaf apabila terdapat kesalahan penulisan nama & gelar
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Music Audio Element -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/audio/wedding-song.wav" type="audio/wav">
+    <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Audio Control Button -->
+  <button id="music-toggle-btn" class="music-control-btn" title="Nyalakan/Matikan Musik">
+    <i id="music-icon" class="fa-solid fa-compact-disc"></i>
+  </button>
+
+  <!-- ========================================================
+       MAIN APP CONTAINER (Mobile-First Centered Layout)
+       ======================================================== -->
+  <div class="invitation-wrapper">
+
+    <!-- Header Brand Topbar -->
+    <header class="py-4 px-6 flex justify-between items-center border-b border-white/5 bg-[#140306]/85 backdrop-blur sticky top-0 z-40">
+      <div class="flex items-center gap-2">
+        <span class="font-cinzel text-sm font-bold text-gold-gradient tracking-widest">S & F</span>
+        <span class="text-[10px] text-rose-300/70 uppercase tracking-widest pl-2 border-l border-white/10">Wedding</span>
+      </div>
+      <div class="text-[11px] text-gold-300 font-cinzel tracking-wider">
+        21 . 10 . 2026
+      </div>
+    </header>
+
+    <!-- ========================================================
+         SECTION: HERO & COUNTDOWN
+         Menampilkan Foto Mempelai Asli dengan Danau Toba
+         ======================================================== -->
+    <section id="hero" class="relative px-6 pt-10 pb-12 text-center overflow-hidden">
+      <!-- Glow ambient background -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-64 h-64 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <p class="font-cinzel text-xs text-gold-300 tracking-[0.3em] uppercase mb-4">
+        Menuju Hari Bahagia
+      </p>
+
+      <!-- Real Photo Arched Frame -->
+      <div class="hero-photo-arched">
+        <img src="assets/images/couple-portrait.jpg" alt="Sanro & Fitra di Danau Toba">
+      </div>
+
+      <h1 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wider text-white mb-1">
+        SANRO & FITRA
+      </h1>
+      <p class="font-cormorant italic text-base text-rose-200 mb-6">
+        Rabu, 21 Oktober 2026 &bull; Dairi, Sumatera Utara
+      </p>
+
+      <div class="gold-divider"></div>
+
+      <!-- Real-time Countdown Timer -->
+      <div class="my-6">
+        <p class="text-xs text-rose-300/80 font-sans uppercase tracking-widest mb-4">
+          Hitung Mundur Acara
+        </p>
+        <div class="flex justify-center items-center gap-3">
+          <div class="countdown-box">
+            <div id="count-days" class="countdown-num">00</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-box">
+            <div id="count-hours" class="countdown-num">00</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-box">
+            <div id="count-minutes" class="countdown-num">00</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-box">
+            <div id="count-seconds" class="countdown-num">00</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add to Calendar Button -->
+      <div class="mt-6">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pembekatan+Pernikahan+Sanro+%26+Fitra&dates=20261021T030000Z/20261021T110000Z&details=Pembekatan+Pernikahan+Sanro+Andreas+Sinurat+%26+Elfitra+Sitanggang+di+Gereja+Katolik+St.+Yoseph+Stasi+Pispis&location=Gereja+Katolik+St.+Yoseph+Stasi+Pispis,+Dusun+Pispis,+Kec.+Pegagan+Hilir" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-glass text-xs py-2.5 px-5">
+          <i class="fa-regular fa-calendar-plus text-gold-400"></i>
+          <span>Simpan ke Google Kalender</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: AYAT SUCI & DOA PEMBUKA (KATOLIK)
+         ======================================================== -->
+    <section class="px-6 py-10 text-center relative">
+      <div class="glass-card p-7 relative overflow-hidden royal-corner-card">
+        <!-- Holy Cross Accent -->
+        <div class="text-gold-400 text-2xl mb-4">
+          <i class="fa-solid fa-cross"></i>
+        </div>
+
+        <h3 class="font-cinzel text-xs text-gold-300 uppercase tracking-widest mb-3">
+          Firman Tuhan
+        </h3>
+
+        <blockquote class="font-cormorant italic text-lg sm:text-xl text-rose-100 leading-relaxed mb-4">
+          "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+        </blockquote>
+        <p class="font-cinzel text-xs font-semibold text-gold-400 tracking-wider">
+          ( Markus 10 : 9 )
+        </p>
+
+        <div class="w-12 h-[1px] bg-gold-400/30 mx-auto my-5"></div>
+
+        <p class="text-xs text-rose-200/90 font-sans leading-relaxed">
+          Atas Kasih dan Karunia Tuhan Yang Maha Esa, kami bermaksud mengucap syukur dan melangsungkan Pembekatan Pernikahan kudus putra-putri kami:
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: MEMPELAI (THE COUPLE)
+         Foto Asli Mempelai Sanro & Fitra
+         ======================================================== -->
+    <section id="mempelai" class="px-6 py-12 text-center relative">
+      <div class="mb-8">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Mempelai Bahagia</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Sanro & Fitra</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <!-- Mempelai Pria: Sanro Andreas Sinurat -->
+      <div class="glass-card-elevated p-7 mb-8 text-center relative royal-corner-card">
+        <div class="person-avatar-circle">
+          <img src="assets/images/groom-sanro.jpg" alt="Sanro Andreas Sinurat">
+        </div>
+        
+        <p class="font-cinzel text-[11px] text-gold-400 tracking-[0.3em] uppercase mb-1">Mempelai Pria</p>
+        <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-gold-gradient tracking-wide">
+          Sanro Andreas Sinurat
+        </h3>
+        
+        <div class="w-10 h-[1px] bg-gold-400/30 mx-auto my-3"></div>
+
+        <p class="text-xs text-rose-200/80 font-sans">
+          Putra tercinta dari:
+        </p>
+        <p class="text-sm font-semibold text-slate-100 mt-1">
+          Bapak M. Sinurat <br>& Ibu R. Malau
+        </p>
+      </div>
+
+      <!-- Ampersand Sign -->
+      <div class="ampersand-sign">&</div>
+
+      <!-- Mempelai Wanita: Elfitra Sitanggang -->
+      <div class="glass-card-elevated p-7 mt-8 text-center relative royal-corner-card">
+        <div class="person-avatar-circle">
+          <img src="assets/images/bride-fitra.jpg" alt="Elfitra Sitanggang">
+        </div>
+        
+        <p class="font-cinzel text-[11px] text-gold-400 tracking-[0.3em] uppercase mb-1">Mempelai Wanita</p>
+        <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-gold-gradient tracking-wide">
+          Elfitra Sitanggang
+        </h3>
+        
+        <div class="w-10 h-[1px] bg-gold-400/30 mx-auto my-3"></div>
+
+        <p class="text-xs text-rose-200/80 font-sans">
+          Putri tercinta dari:
+        </p>
+        <p class="text-sm font-semibold text-slate-100 mt-1">
+          Bapak St. H. Sitanggang <br>& Ibu S. Situngkir
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: WAKTU & TEMPAT ACARA (PEMBEKATAN PERNIKAHAN)
+         ======================================================== -->
+    <section id="acara" class="px-6 py-12 relative text-center">
+      <div class="mb-8">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Waktu & Tempat</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Pembekatan Kudus</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <!-- Card Acara: Altar Katolik -->
+      <div class="glass-card-elevated p-6 text-center relative overflow-hidden royal-corner-card">
+        <!-- Church Sacred Emblem -->
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gold-400/15 border border-gold-400/35 flex items-center justify-center text-gold-300 text-2xl shadow-lg">
+          <i class="fa-solid fa-church"></i>
+        </div>
+
+        <h3 class="font-cinzel text-lg font-bold text-gold-gradient tracking-wide uppercase">
+          Pembekatan Pernikahan
+        </h3>
+        
+        <p class="text-[11px] text-rose-300/80 uppercase tracking-widest mt-1 mb-5">
+          Sacrament of Holy Matrimony
+        </p>
+
+        <!-- Tanggal & Jam -->
+        <div class="space-y-3 py-4 border-y border-white/10 my-4">
+          <div class="flex items-center justify-center gap-3 text-slate-100">
+            <i class="fa-regular fa-calendar-check text-gold-400 text-sm"></i>
+            <span class="font-semibold text-sm">Rabu, 21 Oktober 2026</span>
+          </div>
+          <div class="flex items-center justify-center gap-3 text-slate-100">
+            <i class="fa-regular fa-clock text-gold-400 text-sm"></i>
+            <span class="text-sm">Pukul 10.00 WIB s/d Selesai</span>
+          </div>
+        </div>
+
+        <!-- Lokasi Gereja -->
+        <div class="my-4">
+          <p class="font-semibold text-base text-white mb-1">
+            Gereja Katolik St. Yoseph Stasi Pispis
+          </p>
+          <p class="text-xs text-rose-200/90 leading-relaxed max-w-xs mx-auto">
+            Dusun Pispis, Kec. Pegagan Hilir, Kab. Dairi, Sumatera Utara
+          </p>
+        </div>
+
+        <!-- Tombol Arah Google Maps -->
+        <div class="pt-3 flex flex-col gap-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=Gereja+Katolik+St.+Yoseph+Pispis+Pegagan+Hilir" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-gold w-full text-xs py-3">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Petunjuk Arah (Google Maps)</span>
+          </a>
+
+          <!-- Embedded Map Preview -->
+          <div class="w-full h-44 rounded-xl overflow-hidden border border-white/10 mt-2 shadow-inner">
+            <iframe 
+              src="https://maps.google.com/maps?q=Pegagan+Hilir+Dairi+Sumatera+Utara&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(100%);" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: TATA IBADAH LITURGI PEMBEKATAN
+         ======================================================== -->
+    <section id="liturgi" class="px-6 py-12 relative">
+      <div class="text-center mb-8">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Rangkaian Sakral</span>
+        <h2 class="font-cinzel text-2xl font-bold text-white mt-1">Tata Ibadah Kudus</h2>
+        <div class="gold-divider"></div>
+        <p class="text-xs text-rose-200/80 max-w-xs mx-auto">
+          Rangkaian prosesi pembekatan pernikahan kudus di hadapan Allah dan jemaat-Nya.
+        </p>
+      </div>
+
+      <div class="glass-card p-5">
+        <!-- Step 1 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">I</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Ritus Pembuka &amp; Perarakan</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Penyambutan kedua mempelai beserta orang tua di pintu gereja oleh Imam, diiringi lagu perarakan memasuki altar suci.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">II</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Liturgi Sabda</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Pembacaan Firman Tuhan, Mazmur Tanggapan, dan Homili khusus mengenai kesucian ikatan perkawinan Kristiani.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">III</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Upacara Sakramen Pernikahan</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Pernyataan kesediaan, pengucapan Janji Suci Pernikahan di hadapan Allah, Imam, dan para saksi untuk saling mengasihi seumur hidup.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">IV</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Pemberkatan Cincin &amp; Kitab Suci</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Pemberkatan dan penyematan cincin perkawinan sebagai lambang cinta abadi, penyerahan Kitab Suci, Salib, dan Rosario.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">V</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Doa Restu &amp; Berkat Pengantin</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Doa mohon berkat bagi mempelai baru agar senantiasa dipenuhi damai sejahtera, kesetiaan, dan buah kasih dalam rumah tangga.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="liturgy-step-card flex items-start gap-3">
+          <div class="liturgy-step-number">VI</div>
+          <div>
+            <h4 class="font-cinzel text-xs font-bold text-gold-300">Sungkeman &amp; Berkat Penutup</h4>
+            <p class="text-xs text-rose-100 mt-1 font-sans">
+              Ungkapan bakti dan mohon doa restu kepada orang tua tercinta, dilanjutkan penandatanganan berkas gereja dan berkat pengutusan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Makna Pasu-Pasu Batak Card -->
+      <div class="batak-wisdom-card mt-6">
+        <div class="text-gold-400 text-lg mb-2">
+          <i class="fa-solid fa-ribbon"></i>
+        </div>
+        <p class="font-cormorant italic text-lg sm:text-xl text-gold-300 leading-relaxed mb-3">
+          "Tampakna do rantosna, rim ni tahi do gogona.<br>
+          Gogo mardongan tangiang, marparbuehon dame dohot holong."
+        </p>
+        <div class="w-10 h-[1px] bg-gold-400/40 mx-auto my-3"></div>
+        <p class="text-xs text-rose-100 font-sans leading-relaxed">
+          Penyatuan dua marga terhormat: <span class="text-white font-semibold">Marga Sinurat</span> dan <span class="text-white font-semibold">Marga Sitanggang</span> dalam ikatan kasih suci yang diridhoi Tuhan.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: KISAH CINTA (LOVE STORY)
+         ======================================================== -->
+    <section id="kisah" class="px-6 py-12 relative">
+      <div class="text-center mb-6">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Perjalanan Cinta</span>
+        <h2 class="font-cinzel text-2xl font-bold text-white mt-1">Love Story</h2>
+        <div class="gold-divider"></div>
+        <p class="text-xs text-rose-200/80 max-w-xs mx-auto">
+          Setiap babak kisah kami dipenuhi berkat dan bimbingan kasih Tuhan.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 royal-corner-card">
+        <div class="story-timeline">
+          <!-- Item 1: Awal Pertemuan -->
+          <div class="story-item">
+            <div class="story-dot"></div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+              <h4 class="font-cinzel text-sm font-bold text-gold-300">Awal Pertemuan</h4>
+              <span class="text-[10px] text-rose-300/60 font-sans">Kisah Awal</span>
+            </div>
+            <p class="text-xs text-rose-100 leading-relaxed font-sans">
+              Pertemuan yang telah digariskan Tuhan dalam kesederhanaan waktu. Sebuah sapaan hangat yang kemudian membuka percakapan dan menumbuhkan rasa saling mengagumi.
+            </p>
+          </div>
+
+          <!-- Item 2: Jatuh Cinta -->
+          <div class="story-item">
+            <div class="story-dot"></div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+              <h4 class="font-cinzel text-sm font-bold text-gold-300">Jatuh Cinta</h4>
+              <span class="text-[10px] text-rose-300/60 font-sans">Saling Menemukan</span>
+            </div>
+            <p class="text-xs text-rose-100 leading-relaxed font-sans">
+              Melewati hari-hari bersama, saling mengenal karakter, doa dan harapan. Rasa kasih semakin bertumbuh dalam kehangatan dan komitmen untuk saling melengkapi.
+            </p>
+          </div>
+
+          <!-- Item 3: Lamaran -->
+          <div class="story-item">
+            <div class="story-dot"></div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+              <h4 class="font-cinzel text-sm font-bold text-gold-300">Lamaran</h4>
+              <span class="text-[10px] text-rose-300/60 font-sans">Restu Keluarga</span>
+            </div>
+            <p class="text-xs text-rose-100 leading-relaxed font-sans">
+              Di hadapan kedua keluarga besar tercinta, ikatan komitmen diteguhkan. Cincin disematkan sebagai lambang kesungguhan hati untuk melangkah bersama ke altar suci.
+            </p>
+          </div>
+
+          <!-- Item 4: Hari Bahagia -->
+          <div class="story-item">
+            <div class="story-dot"></div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+              <h4 class="font-cinzel text-sm font-bold text-gold-300">Hari Bahagia</h4>
+              <span class="text-[10px] text-rose-300/60 font-sans">21 Oktober 2026</span>
+            </div>
+            <p class="text-xs text-rose-100 leading-relaxed font-sans">
+              Kini langkah kami bermuara pada janji suci pembekatan pernikahan, mengawali babak baru kehidupan dalam ikatan kasih yang abadi di hadapan Tuhan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: AMPLOP DIGITAL (REKENING BANK BRI)
+         ======================================================== -->
+    <section class="px-6 py-12 relative text-center">
+      <div class="mb-8">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Tanda Kasih</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Amplop Digital</h2>
+        <div class="gold-divider"></div>
+        <p class="text-xs text-rose-200/90 max-w-xs mx-auto leading-relaxed">
+          Doa restu Anda merupakan karunia terindah bagi kami. Namun jika ingin memberikan tanda kasih berupa kado pernikahan, kami menyediakan rekening digital di bawah ini:
+        </p>
+      </div>
+
+      <!-- VIP Luxury Wine-Red ATM Card: Bank BRI -->
+      <div class="bank-card text-left">
+        <div class="flex justify-between items-center mb-6">
+          <div class="card-chip"></div>
+          <div class="text-right">
+            <span class="font-cinzel font-bold text-gold-300 tracking-wider text-base block">BANK BRI</span>
+            <span class="text-[9px] text-rose-200/70 uppercase tracking-widest">Tabungan Digital</span>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-rose-300/80 uppercase tracking-widest font-sans mb-1">Nomor Rekening</p>
+        <p id="account-number" class="font-mono text-xl sm:text-2xl text-white tracking-widest font-bold mb-5">
+          5377 0102 0645 533
+        </p>
+
+        <div class="flex justify-between items-end">
+          <div>
+            <p class="text-[10px] text-rose-300/80 uppercase tracking-wider font-sans">Atas Nama</p>
+            <p class="text-sm font-semibold text-slate-100 uppercase tracking-wide">
+              ELFITRA SITANGGANG
+            </p>
+          </div>
+
+          <button onclick="copyAccountNumber('537701020645533')" class="btn-glass text-xs py-2 px-4 hover:bg-gold-400/20">
+            <i class="fa-regular fa-copy text-gold-400"></i>
+            <span>Salin No. Rekening</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: BUKU DOA & UCAPAN RESTU (WISHES & PRAYERS)
+         ======================================================== -->
+    <section id="doa" class="px-6 py-12 relative">
+      <div class="text-center mb-8">
+        <span class="font-cinzel text-xs text-gold-300 tracking-[0.25em] uppercase">Buku Tamu</span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Doa &amp; Ucapan</h2>
+        <div class="gold-divider"></div>
+        <p class="text-xs text-rose-200/80 max-w-xs mx-auto">
+          Tuliskan doa dan harapan terbaik Anda bagi mempelai Sanro &amp; Fitra.
+        </p>
+      </div>
+
+      <!-- Form Kirim Doa Restu -->
+      <div class="glass-card-elevated p-6 mb-8 royal-corner-card">
+        <form id="wishes-form" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-rose-200 uppercase tracking-wider mb-1.5" for="wishes-name">
+              Nama Lengkap
+            </label>
+            <input 
+              type="text" 
+              id="wishes-name" 
+              required 
+              placeholder="Contoh: Bpk. Roberto & Keluarga" 
+              class="w-full bg-[#1c0408] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-rose-300/40 focus:outline-none focus:border-gold-400 transition"
+            >
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-rose-200 uppercase tracking-wider mb-1.5" for="wishes-relation">
+              Hubungan / Kerabat (Opsional)
+            </label>
+            <input 
+              type="text" 
+              id="wishes-relation" 
+              placeholder="Contoh: Keluarga Besar / Sahabat / Rekan" 
+              class="w-full bg-[#1c0408] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-rose-300/40 focus:outline-none focus:border-gold-400 transition"
+            >
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-rose-200 uppercase tracking-wider mb-1.5" for="wishes-message">
+              Pesan Doa Restu
+            </label>
+            <textarea 
+              id="wishes-message" 
+              rows="3" 
+              required 
+              placeholder="Tuliskan doa dan berkat Anda untuk Sanro & Fitra..." 
+              class="w-full bg-[#1c0408] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-rose-300/40 focus:outline-none focus:border-gold-400 transition resize-none"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-gold w-full text-xs py-3 mt-2">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Kirim Doa Restu</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Feed Doa & Harapan Tamu Realtime -->
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+          <h4 class="font-cinzel text-xs font-bold text-gold-300 uppercase tracking-wider">
+            Untaian Doa Tamu
+          </h4>
+          <span class="text-xs text-rose-200/80">
+            <span id="total-wishes-count">0</span> Doa Masuk
+          </span>
+        </div>
+
+        <div id="wishes-list" class="max-h-80 overflow-y-auto space-y-3 pr-1">
+          <!-- Comments dynamically populated by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: KATA PENUTUP & TERIMA KASIH
+         ======================================================== -->
+    <section class="px-6 py-12 text-center relative border-t border-white/5">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full border border-gold-400/30 flex items-center justify-center text-gold-300 shadow-md">
+        <i class="fa-solid fa-hands-praying text-lg"></i>
+      </div>
+
+      <p class="font-cormorant italic text-lg sm:text-xl text-rose-100 leading-relaxed max-w-sm mx-auto mb-6">
+        "Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, atas doa dan restu yang tulus bagi putra-putri kami."
+      </p>
+
+      <p class="text-xs text-rose-300/80 uppercase tracking-widest font-sans mb-1">
+        Kami yang berbahagia,
+      </p>
+      <h3 class="font-cinzel text-xl font-bold text-gold-gradient tracking-widest mb-4">
+        SANRO & FITRA
+      </h3>
+
+      <div class="text-xs text-rose-200/80 font-sans space-y-1.5 mt-4">
+        <p>Keluarga Besar <span class="text-white font-semibold">Sinurat / Malau</span></p>
+        <p class="text-gold-400">&bull;</p>
+        <p>Keluarga Besar <span class="text-white font-semibold">Sitanggang / Situngkir</span></p>
+      </div>
+
+      <!-- Footer Copyright -->
+      <div class="mt-12 pt-6 border-t border-white/5 text-[11px] text-rose-300/50 font-sans">
+        The Wedding of Sanro & Fitra &copy; 2026. All Rights Reserved.
+      </div>
+    </section>
+
+  </div><!-- /invitation-wrapper -->
+
+  <!-- ========================================================
+       FLOATING BOTTOM NAVIGATION BAR
+       ======================================================== -->
+  <nav class="bottom-nav">
+    <a href="#hero" class="nav-item active" title="Sampul">
+      <i class="fa-solid fa-house"></i>
+      <span>Awal</span>
+    </a>
+    <a href="#mempelai" class="nav-item" title="Mempelai">
+      <i class="fa-solid fa-heart"></i>
+      <span>Mempelai</span>
+    </a>
+    <a href="#acara" class="nav-item" title="Acara">
+      <i class="fa-solid fa-church"></i>
+      <span>Acara</span>
+    </a>
+    <a href="#liturgi" class="nav-item" title="Tata Ibadah">
+      <i class="fa-solid fa-scroll"></i>
+      <span>Liturgi</span>
+    </a>
+    <a href="#kisah" class="nav-item" title="Love Story">
+      <i class="fa-solid fa-book-heart"></i>
+      <span>Kisah</span>
+    </a>
+    <a href="#doa" class="nav-item" title="Buku Doa">
+      <i class="fa-solid fa-envelope-open"></i>
+      <span>Doa</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================
+       TOAST NOTIFICATION COMPONENT
+       ======================================================== -->
+  <div id="toast-notice" class="toast-notice">
+    <i class="fa-solid fa-circle-check text-gold-400 text-base"></i>
+    <span id="toast-message">Pesan notifikasi</span>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <!-- Google Firebase SDK (Database Cloud Realtime Gratis) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

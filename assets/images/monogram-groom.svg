@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="goldGroom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2cc"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6714"/>
+    </linearGradient>
+    <radialGradient id="glowGroom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="#0d0f14"/>
+  <circle cx="200" cy="200" r="180" fill="url(#glowGroom)"/>
+
+  <!-- Ornate Octagon Shield -->
+  <polygon points="200,30 320,80 370,200 320,320 200,370 80,320 30,200 80,80" 
+           stroke="url(#goldGroom)" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <polygon points="200,45 305,90 350,200 305,310 200,355 95,310 50,200 95,90" 
+           stroke="url(#goldGroom)" stroke-width="2" fill="rgba(18,21,28,0.7)"/>
+
+  <!-- Laurel Wreath -->
+  <circle cx="200" cy="200" r="115" stroke="url(#goldGroom)" stroke-width="1.5" stroke-dasharray="4,6" fill="none"/>
+  
+  <!-- Male Crown Emblem -->
+  <path d="M 180 115 L 185 100 L 200 110 L 215 100 L 220 115 Z" fill="url(#goldGroom)"/>
+  <circle cx="200" cy="95" r="3" fill="url(#goldGroom)"/>
+
+  <!-- Center Letter S -->
+  <text x="200" y="240" font-family="'Cinzel', Georgia, serif" font-size="115" font-weight="700" fill="url(#goldGroom)" text-anchor="middle">S</text>
+  
+  <text x="200" y="280" font-family="'Cinzel', sans-serif" font-size="12" font-weight="600" fill="#cbd5e1" text-anchor="middle" letter-spacing="5">THE GROOM</text>
+  <text x="200" y="302" font-family="'Cormorant Garamond', Georgia, serif" font-size="14" font-style="italic" fill="#d4af37" text-anchor="middle">Sanro Andreas Sinurat</text>
+</svg>
