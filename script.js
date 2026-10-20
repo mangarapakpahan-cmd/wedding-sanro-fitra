@@ -3,6 +3,35 @@
  * Ultra-Luxury Obsidian & Champagne Gold Edition
  */
 
+// Global Open Invitation Function (Failsafe & Direct Click Handler)
+window.openInvitation = function() {
+  document.body.classList.remove('lock-scroll');
+  const coverScreen = document.getElementById('cover-screen');
+  if (coverScreen) {
+    coverScreen.classList.add('opened');
+    coverScreen.style.transform = 'translateY(-100%)';
+    coverScreen.style.opacity = '0';
+    coverScreen.style.pointerEvents = 'none';
+  }
+
+  // Play audio
+  const bgMusic = document.getElementById('bg-music');
+  const musicToggleBtn = document.getElementById('music-toggle-btn');
+  const musicIcon = document.getElementById('music-icon');
+  if (bgMusic) {
+    bgMusic.play().then(() => {
+      if (musicToggleBtn) musicToggleBtn.classList.add('rotating');
+      if (musicIcon) musicIcon.className = 'fa-solid fa-compact-disc';
+    }).catch(err => {
+      console.log('Audio autoplay prevented or waiting user interaction:', err);
+    });
+  }
+
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 250);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Elements
   const coverScreen = document.getElementById('cover-screen');
@@ -28,23 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Open Invitation Action
+  // 2. Open Invitation Action (Event Listener)
   if (btnOpenInvitation) {
-    btnOpenInvitation.addEventListener('click', () => {
-      // Unlock body scroll
-      document.body.classList.remove('lock-scroll');
-
-      // Animate cover out
-      coverScreen.classList.add('opened');
-
-      // Play music
-      playAudio();
-
-      // Smooth scroll to top of content
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 250);
-    });
+    btnOpenInvitation.addEventListener('click', window.openInvitation);
   }
 
   // 3. Audio Controls
@@ -142,15 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Google Firebase Realtime Database & LocalStorage Dual-Mode
   // ========================================================
-  // Tempelkan konfigurasi Firebase dari console.firebase.google.com:
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "firebase/app";
-  import { getAnalytics } from "firebase/analytics";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyCvP4JOb_Sq66VZlFBu0IGwmOKF4U2rHBU",
     authDomain: "wedding-sanro-fitra.firebaseapp.com",
@@ -161,16 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
     appId: "1:78885276376:web:7a6305d7f8ee2cc62aa5ad",
     measurementId: "G-WG5WBY1TSH"
   };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   // ========================================================
 
   let firebaseDb = null;
   let wishesRef = null;
 
-  if (window.firebase && firebaseConfig.apiKey && firebaseConfig.databaseURL) {
+  if (window.firebase && firebaseConfig.apiKey) {
     try {
       if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
